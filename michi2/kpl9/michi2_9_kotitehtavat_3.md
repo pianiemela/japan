@@ -59,13 +59,26 @@ Katsotaan, miten tämä lause saadaan hiottua timanttiseen kuntoon:
 
 **Jos Tome pesi astiat puolestasi (mennyt aika / kiitos tehdystä palveluksesta):**
 
-> **とめくんは 皿（さら）を 洗（あら）って くださいました。**
-> *(Tome-kun wa sara o aratte kudasaimashita.)*
+Jos kyseessä on suomalainen nimi To-mi, luonnollinen katakanamuoto on:
 
-**Jos pyydät Tome-kunia pesemään astiat (pyyntö):**
+トミ
 
-> **とめくん、皿を洗ってください。**
-> *(Tome-kun, sara o aratte kudasai.)*
+Silloin lauseet ovat:
+
+トミくんは 皿（さら）を 洗（あら）って くださいました。
+ (Tomi-kun wa sara o aratte kudasaimashita.)
+
+ja
+
+トミくん、皿（さら）を 洗（あら）って ください。
+ (Tomi-kun, sara o aratte kudasai.)
+
+Katakanassa:
+
+To = ト
+mi = ミ
+
+→ トミ = Tomi.
 
 ---
 
@@ -155,3 +168,46 @@ Tässä on korjattu lause ja sen analyysi:
 
 ---
 
+
+
+1.. 太郎くんにこの自動販売機のすかいかたをおしえていただきました。
+   Tarō-kun ni kono jidō hanbaiki no suka i-kata o oshiete itadakimashita.
+
+
+2. 
+トミくんに お皿（さら）を 洗（あら）って もらいました。
+
+"Sain Tomilta avun astioiden pesemisessä."
+
+niin luonnollisempi on:
+
+
+Tässä に on tärkeä:
+
+トミくんに～してもらいました = sain Tomilta palveluksen / Tomi teki minulle.
+
+
+
+
+3. 渡辺先生（わたなべせんせい）に推薦状（すいせんじょう）を書（か）いてもらいました。
+Sain opettaja Watanaben kirjoittamaan minulle suosituskirjeen.
+
+Sanasto
+渡辺先生 = opettaja Watanabe
+推薦状（すいせんじょう）= suosituskirje
+書く（かく）= kirjoittaa
+～てもらう = saada joku tekemään jotakin itselleen
+Merkitys
+
+"Taidan jo osata tämän 😊":
+
+
+Vertailu
+
+渡辺先生が推薦状を書いてくれました。
+ Painopiste: Watanabe-ope kirjoitti minulle suosituskirjeen.
+
+渡辺先生に推薦状を書いてもらいました。
+ Painopiste: Sain Watanabe-opelta suosituskirjeen / sain hänet kirjoittamaan sen minulle.
+
+Jälkimmäinen on erittäin luonnollinen ilmaus, kun puhut omasta näkökulmastasi ja saamastasi avusta.
