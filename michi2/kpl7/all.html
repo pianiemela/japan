@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>all.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>Add a verb to the following sentences:</p>
+<p>1 れいきいろいさあとをきているおんなのこはまいじゃさんです</p>
+<p>Assuming the intended sentence is:</p>
+<p><strong>れいきいろいさあとをきているおんなのこはまいじゃさんです。</strong></p>
+<p>With kanji where natural:</p>
+<p><strong>1. れい黄色いサートを着ている女の子はマイジャさんです。</strong></p>
+<p>However, <strong>「れいきいろいさあと」</strong> looks like it may contain a typo. If you meant something like <strong>「れい黄色いシャツを着ている女の子は…」</strong>, then the natural version would be:</p>
+<p><strong>黄色いシャツを着ている女の子はマイジャさんです。</strong></p>
+<p>= <em>The girl wearing a yellow shirt is Maija.</em></p>
+<p>2 むらさきいろのわんぴいすおきていろおんあのひとはりいささんです</p>
+<p>With kanji where natural, I would write it as:</p>
+<p><strong>紫色のワンピースを着ている女の人はリーサさんです。</strong></p>
+<p>Breakdown:</p>
+<ul>
+<li>むらさきいろ → <strong>紫色</strong>（むらさきいろ） = purple</li>
+<li>わんぴいす → <strong>ワンピース</strong> = one-piece dress</li>
+<li>きている → <strong>着ている</strong> = wearing</li>
+<li>おんなのひと → <strong>女の人</strong>（おんなのひと） = woman</li>
+<li>りいさ → <strong>リーサ</strong> = Riisa/Liisa</li>
+<li>さん → <strong>さん</strong></li>
+</ul>
+<p>So the sentence means:</p>
+<blockquote>
+<p><strong>The woman wearing a purple dress is Liisa.</strong></p>
+</blockquote>
+<p>3 しろいTーしぇすおきていろおとこのひとはぺっかさんです</p>
+<p>The natural kanji version is:</p>
+<p><strong>白いTシャツを着ている男の人はペッカさんです。</strong></p>
+<p>Breakdown:</p>
+<ul>
+<li>しろい → <strong>白い</strong>（しろい） = white</li>
+<li>Tーしぇす → <strong>Tシャツ</strong> = T-shirt</li>
+<li>きている → <strong>着ている</strong>（きている） = wearing</li>
+<li>おとこのひと → <strong>男の人</strong>（おとこのひと） = man</li>
+<li>ぺっか → <strong>ペッカ</strong> = Pekka</li>
+<li>さん → <strong>さん</strong></li>
+</ul>
+<p><strong>Meaning:</strong></p>
+<blockquote>
+<p>The man wearing a white T-shirt is Pekka.</p>
+</blockquote>
+<p>4 くろずぼんをきているだんせいはさろねんさんです</p>
+<p>The natural kanji version is:</p>
+<p><strong>黒いズボンを着ている男性はサロネンさんです。</strong></p>
+<p>Breakdown:</p>
+<ul>
+<li>くろい → <strong>黒い</strong>（くろい） = black</li>
+<li>ずぼん → <strong>ズボン</strong> = trousers/pants</li>
+<li>きている → <strong>着ている</strong>（きている） = wearing</li>
+<li>だんせい → <strong>男性</strong>（だんせい） = man/male</li>
+<li>さろねん → <strong>サロネン</strong> = Salonen</li>
+<li>さん → <strong>さん</strong></li>
+</ul>
+<p><strong>Meaning:</strong></p>
+<blockquote>
+<p>The man wearing black trousers is Mr. Salonen.</p>
+</blockquote>
+<p>5</p>
+<p>Assuming <strong>おれんしいろ</strong> = orange, <strong>てありんぐ</strong> = T-shirt, and <strong>じゃせい</strong> = 女性, the natural Japanese would be:</p>
+<p><strong>オレンジ色のTシャツを着ている女性はペリトネンさんです。</strong></p>
+<p>Sensible translation options:</p>
+<ol>
+<li><strong>The woman wearing an orange T-shirt is Ms. Peritonen.</strong> — most natural</li>
+<li><strong>The woman in the orange T-shirt is Peritonen.</strong> — natural and concise</li>
+<li><strong>The woman wearing an orange shirt is Ms. Peritonen.</strong> — slightly less literal</li>
+<li><strong>The woman who is wearing an orange T-shirt is Peritonen.</strong> — closer to the Japanese structure</li>
+</ol>
+<p>For a beginner Japanese exercise, I'd use <strong>“The woman wearing an orange T-shirt is Ms. Peritonen.”</strong></p>
+<p>Ah, yes — you mean <strong>ティアリンゴ (TeaRinGo)</strong>, written in katakana, as the vocabulary item.</p>
+<p>Then I would keep it exactly as the Japanese text:</p>
+<p><strong>オレンジ色のティアリンゴを着ている女性はペリトネンさんです。</strong></p>
+<p>And the beginner-level translation:</p>
+<blockquote>
+<p><strong>The woman wearing an orange TeaRinGo is Ms. Peritonen.</strong></p>
+</blockquote>
+<p>So <strong>ティアリンゴ = TeaRinGo</strong> should not be translated as “T-shirt.”</p>
+<ol>
+<li></li>
+</ol>
+<p>あのむらさきいろのきものをきているひとわじゅりこさんです</p>
+<p>The corrected version with kanji is:</p>
+<p><strong>あの紫色の着物を着ている人はジュリコさんです。</strong></p>
+<p>Breakdown:</p>
+<ul>
+<li>あの → that</li>
+<li>むらさきいろ → <strong>紫色</strong>（むらさきいろ）</li>
+<li>きもの → <strong>着物</strong>（きもの）</li>
+<li>きている → <strong>着ている</strong>（きている）</li>
+<li>ひと → <strong>人</strong>（ひと）</li>
+<li>わ → <strong>は</strong></li>
+<li>じゅりこ → <strong>ジュリコ</strong></li>
+</ul>
+<p><strong>Translation:</strong></p>
+<blockquote>
+<p>That person wearing a purple kimono is Ms. Juriko.</p>
+</blockquote>
+<ol start="2">
+<li></li>
+</ol>
+<p>The corrected natural version is:</p>
+<p><strong>あの茶色のメガネをかけている人は田中さんです。</strong></p>
+<p>The key correction is <strong>メガネをきている → メガネをかけている</strong>. For glasses, Japanese uses <strong>かける</strong>, not <strong>着る</strong>.</p>
+<ul>
+<li>茶色（ちゃいろ）＝ brown</li>
+<li>メガネ ＝ glasses</li>
+<li>かけている ＝ wearing</li>
+<li>人（ひと）＝ person</li>
+<li>田中（たなか）さん ＝ Mr./Ms. Tanaka</li>
+<li>です ＝ is</li>
+</ul>
+<p><strong>Translation:</strong> “The person wearing those brown glasses is Mr./Ms. Tanaka.”</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>The corrected version is:</p>
+<p><strong>あのピンク色のネックレスをかけている人はなおみさんです。</strong></p>
+<p>Or with the name in kanji if appropriate:</p>
+<p><strong>あのピンク色のネックレスをかけている人は直美さんです。</strong></p>
+<p>The key correction is:</p>
+<ul>
+<li>❌ ネックレスを<strong>かきている</strong></li>
+<li>✅ ネックレスを<strong>かけている</strong></li>
+</ul>
+<p>And:</p>
+<ul>
+<li>❌ なおみさん<strong>はです</strong></li>
+<li>✅ なおみさん<strong>です</strong></li>
+</ul>
+<p><strong>Translation:</strong></p>
+<blockquote>
+<p>The person wearing that pink necklace is Naomi.</p>
+</blockquote>
+<ol start="4">
+<li></li>
+</ol>
+<p>The corrected version is:</p>
+<p><strong>あの灰色のTシャツを着ている人はまことさんです。</strong></p>
+<p>Key correction:</p>
+<ul>
+<li>❌ Tシャツを<strong>けている</strong></li>
+<li>✅ Tシャツを<strong>着ている</strong>（きている）＝ wearing</li>
+</ul>
+<p>So the sentence means:</p>
+<blockquote>
+<p><strong>The person wearing that gray T-shirt is Makoto.</strong></p>
+</blockquote>
+<ol start="5">
+<li>The corrected version is:</li>
+</ol>
+<p><strong>あの赤いジーンズを着ている人はたつおさんです。</strong></p>
+<p>Key corrections:</p>
+<ul>
+<li>あかい → <strong>赤い</strong>（あかい）= red</li>
+<li>のし → removed; <strong>赤いジーンズ</strong> is the natural structure</li>
+<li>じゃんず → <strong>ジーンズ</strong> = jeans</li>
+<li>きている → <strong>着ている</strong>（きている）= wearing</li>
+</ul>
+<p><strong>Translation:</strong></p>
+<blockquote>
+<p><strong>The person wearing those red jeans is Tatsuo.</strong></p>
+</blockquote>
+<ol start="6">
+<li></li>
+</ol>
+<p>Yes — the word you are hearing/writing as <strong>せひろ / せびろ</strong> is almost certainly:</p>
+<p><strong>背広（せびろ）</strong></p>
+<p>It means a <strong>business suit / men's suit</strong>, especially the traditional term for a smart suit worn by a salaryman.</p>
+<p>So your sentence should be:</p>
+<p><strong>あの黒い背広を着ている人はうのえさんです。</strong></p>
+<blockquote>
+<p><strong>The person wearing that black suit is Uno(e)-san.</strong></p>
+</blockquote>
+<h3 id="背広せびろ">背広（せびろ）</h3>
+<ul>
+<li><strong>背</strong>（せ）＝ back</li>
+<li><strong>広</strong>（ひろ）＝ wide</li>
+<li><strong>背広</strong>（せびろ）＝ suit</li>
+</ul>
+<p><strong>スーツ</strong> is the modern, loanword equivalent, but <strong>背広</strong> is particularly appropriate if the exercise is describing a Japanese <strong>salaryman in a smart business suit</strong>.</p>
+<p>Also, the pronunciation is <strong>せびろ (sebiro)</strong>, not <em>sehiro</em>: the <strong>ひ</strong> becomes voiced <strong>び</strong>.</p>
+<p>.1 着物をいていろおんあの人はたなかさんです
+2. The corrected version is:</p>
+<p><strong>赤いジーンズを着ている男の人はたつおさんです。</strong></p>
+<p>Corrections:</p>
+<ul>
+<li>あかい → <strong>赤い</strong></li>
+<li>じいんす → <strong>ジーンズ</strong></li>
+<li>いている → <strong>着ている</strong></li>
+<li>おとこのひと → <strong>男の人</strong></li>
+</ul>
+<p><strong>Translation:</strong></p>
+<blockquote>
+<p><strong>The man wearing red jeans is Tatsuo.</strong></p>
+</blockquote>
+<p>Almost correct. The natural version is:</p>
+<p><strong>黒いジーンズを着ている男の人はまことさんです。</strong></p>
+<p>Corrections:</p>
+<ul>
+<li>くろい → <strong>黒い</strong></li>
+<li>の → remove: <strong>黒いジーンズ</strong>, not 黒いのジーンズ</li>
+<li>じいんす → <strong>ジーンズ</strong></li>
+<li>いている → <strong>着ている</strong></li>
+</ul>
+<blockquote>
+<p><strong>The man wearing black jeans is Makoto.</strong>
+Example:</p>
+</blockquote>
+<p>自然な日本語にすると：</p>
+<p><strong>日本で食べるとき、よく使うものは日本語で何と言いますか？</strong>
+<em>Nihon de taberu toki, yoku tsukau mono wa nihongo de nan to iimasu ka?</em></p>
+<p>→ <strong>What do you call the things you often use when eating in Japan?</strong></p>
+<p>たとえば：</p>
+<ul>
+<li><strong>箸（はし）</strong> — chopsticks</li>
+<li><strong>スプーン</strong> — spoon</li>
+<li><strong>フォーク</strong> — fork</li>
+<li><strong>ナイフ</strong> — knife</li>
+<li><strong>お茶（おちゃ）</strong> — tea</li>
+<li><strong>お皿（おさら）</strong> — plate</li>
+<li><strong>コップ</strong> — cup/glass</li>
+<li><strong>おしぼり</strong> — wet towel/hand towel</li>
+</ul>
+<p>お箸です</p>
+<ol>
+<li></li>
+</ol>
+<p>The corrected beginner-level sentence is:</p>
+<p><strong>雨が降るとき、何を使いますか？</strong>
+ふめがふるときなにを使いますか?
+tsukaimaska?</p>
+<p>If you mean <strong>“What do you use when it rains?”</strong>, this is the natural form.</p>
+<p>Corrections:</p>
+<ul>
+<li>ふめ → <strong>雨（あめ）</strong></li>
+<li>ふる → <strong>降る（ふる）</strong></li>
+<li>とき → <strong>とき</strong></li>
+<li>なに → <strong>何（なに）</strong></li>
+<li>つかいます → <strong>使います</strong></li>
+<li><strong>雨が降るとき</strong> = when it rains</li>
+<li><strong>何を使いますか？</strong> = what do you use?</li>
+</ul>
+<p>傘をつかいます
+kasa wo tsukaimasu
+kasa vo tsukau</p>
+<ol start="2">
+<li>
+<p>現金で払わないとき、なにを使いますか?</p>
+<p>バンクカードを使（つか）います。</p>
+</li>
+<li>
+<p>Here is the correction and breakdown for your sentence:</p>
+</li>
+</ol>
+<p><strong>手袋（てぶくろ）を使（つか）います。</strong> <em>(I use gloves.)</em></p>
+<hr>
+<h3 id="key-corrections">Key Corrections</h3>
+<ul>
+<li><strong>Particle Placement:</strong> The particle <strong>を</strong> (object marker) belongs directly after the item being used, not after 手 (手<strong>に</strong> → <strong>手を</strong> / <strong>手袋を</strong>).</li>
+<li><strong>Word Choice:</strong> To ask &quot;what do you use <em>on your hands</em>&quot;, Japanese uses the location particle <strong>に</strong> with the body part: <strong>手（て）に</strong> (on your hands) <strong>何（なに）を</strong> (what) <strong>使（つか）いますか</strong> (do you use?).</li>
+</ul>
+<hr>
+<h3 id="revised-question--standard-answer">Revised Question &amp; Standard Answer</h3>
+<ul>
+<li><strong>Question:</strong> 寒（さむ）いとき、手（て）に何（なに）を使（つか）いますか。
+<em>(When it's cold, what do you use on your hands?)</em></li>
+<li><strong>Answer:</strong> <strong>手袋（てぶくろ）を使（つか）います。</strong>
+<em>(I use gloves.)</em></li>
+</ul>
+<ol start="4">
+<li>女性がドレスの時履く、うついものはなんですか?</li>
+</ol>
+<p>Josei ga doresu no toki haku, u tsui mono wa nandesu ka?</p>
+<p>ハイヒール1.
+A natural beginner-level version would be:</p>
+<p><strong>日本でパーティーなどができる店で着る服は何と言いますか？</strong>
+<em>Nihon de paatii nado ga dekiru mise de kiru fuku wa nan to iimasu ka?</em></p>
+<p>→ <strong>What do you call the clothes you wear at places in Japan where you can have parties, etc.?</strong></p>
+<p>If you mean <strong>“What do you call a shop where you can buy clothes suitable for parties?”</strong>, then a better sentence is:</p>
+<p><strong>日本でパーティーなどに着ていく服を売っている店は何と言いますか？</strong>
+→ <em>What do you call a shop in Japan that sells clothes to wear to parties?</em></p>
+<p>きものどいいです</p>
+<ol>
+<li></li>
+</ol>
+<p>A natural beginner-level version would be:</p>
+<p><strong>日本でパーティーなどができる店で着る服は何と言いますか？</strong>
+<em>Nihon de paatii nado ga dekiru mise de kiru fuku wa nan to iimasu ka?</em></p>
+<p>→ <strong>What do you call the clothes you wear at places in Japan where you can have parties, etc.?</strong></p>
+<p>If you mean <strong>“What do you call a shop where you can buy clothes suitable for parties?”</strong>, then a better sentence is:</p>
+<p><strong>日本でパーティーなどに着ていく服を売っている店は何と言いますか？</strong>
+→ <em>What do you call a shop in Japan that sells clothes to wear to parties?</em></p>
+<p>きものどいいです</p>
+<ol>
+<li>結婚している人が指にするものはなんですか?</li>
+</ol>
+<p>Mitä naimisissa olevat ihmiset käyttävät sormissaan?</p>
+<p>指輪 (yubiwa)</p>
+<p>指輪をつかっています</p>
+<ol start="2">
+<li>さむいときようふくのうえにきるものはなんですか</li>
+</ol>
+<p>Yes, it is understandable. I would make one small adjustment:</p>
+<p><strong>寒いとき、洋服の上に着るものは何ですか？</strong>
+<em>Samui toki, yōfuku no ue ni kiru mono wa nan desu ka?</em></p>
+<p>→ <strong>What do you wear over your clothes when it is cold?</strong></p>
+<p>For a beginner-level question, this is perfectly good. You could also say <strong>上着（うわぎ）</strong>, meaning “outerwear/jacket”:</p>
+<p><strong>寒いとき、洋服の上に着るものは何ですか？ → 上着です。</strong>
+“When it’s cold, what do you wear over your clothes?” → “Outerwear / a jacket.”</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>The Japanese term for jeans is <strong>ジーンズ</strong> (<em>jīnzu</em>). Alternatively, <strong>ジーパン</strong> (<em>jīpan</em> — short for &quot;jeans pants&quot;) or <strong>デニム</strong> (<em>denimu</em> — denim) are also widely used.</p>
+<p>Here are the fixes for your question and a natural response:</p>
+<h3 id="question-revision">Question Revision</h3>
+<ul>
+<li><strong>Original:</strong> わかものがよく履くズボンは日本語でなnといいですか</li>
+<li><strong>Corrected:</strong> 若（わか）者（もの）がよく履（は）くズボンは日本語（にほんご）で<strong>何（なん）と言（い）いますか</strong>。
+<em>(What do you call the pants that young people often wear in Japanese?)</em></li>
+</ul>
+<hr>
+<h3 id="improved-answer-options">Improved Answer Options</h3>
+<ul>
+<li><strong>ジーンズ</strong> (<em>jīnzu</em>): Standard word for jeans.</li>
+<li><strong>ジーパン</strong> (<em>jīpan</em>): A very common casual abbreviation (Jeans + Pants).</li>
+<li><strong>デニム</strong> (<em>denimu</em>): Frequently used when talking about trendier jeans or denim material.</li>
+</ul>
+<p><strong>Complete Answer Sentence:</strong></p>
+<blockquote>
+<p><strong>ジーンズと言（い）います。</strong> <em>(They are called jeans.)</em>
+<em>(or <strong>ジーパンと言います</strong>)</em></p>
+</blockquote>
+<p>This <a href="https://www.youtube.com/watch?v=hPFEM3orhlE">Japanese pronunciation guide for jeans</a> clearly demonstrates how to pronounce the loanword ジーンズ (<em>jīnzu</em>) in natural Japanese.</p>
+<p>Your question is almost perfect! To make it completely natural, just change <strong>はく</strong> to its noun-modifying form (which is already <strong>はく</strong>) and fix the ending from <strong>なんといいますか</strong> to include the quote particle <strong>と</strong> (which you already included!). The sentence as you wrote it is actually grammatically correct, though adding kanji makes it easier to read.</p>
+<p>Here is the natural phrasing and the answer:</p>
+<h3 id="question-revision-1">Question Revision</h3>
+<ul>
+<li><strong>Original:</strong> にほんでいえのなかではくものはなんといいますか</li>
+<li><strong>With Kanji &amp; Furigana:</strong> 日本（にほん）で家（いえ）の中（なか）で履（は）く物（もの）は何（なん）と言（い）いますか。
+<em>(What do you call things you wear on your feet inside the house in Japan?)</em></li>
+</ul>
+<hr>
+<h3 id="answer-options">Answer Options</h3>
+<p>The term you are looking for is <strong>スリッパ</strong> (<em>surippa</em> - slippers) or <strong>ルームシューズ</strong> (<em>ruumu shuuzu</em> - room shoes).</p>
+<ul>
+<li><strong>スリッパ</strong> (<em>surippa</em>): The standard, most common term for indoor slippers.</li>
+<li><strong>上履（うわば）き</strong> (<em>uwabaki</em>): Specifically refers to indoor shoes worn by students inside schools or workers in certain facilities.</li>
+</ul>
+<p><strong>Complete Answer Sentence:</strong></p>
+<blockquote>
+<p><strong>スリッパと言（い）います。</strong>
+<em>(They are called slippers.)</em></p>
+</blockquote>
+<h2 id="ほんをよむところはなんといいですか">ほんをよむところはなんといいですか</h2>
+<h3 id="question-revision-2">Question Revision</h3>
+<ul>
+<li><strong>Corrected:</strong> 本（ほん）を<strong>読（よ）む</strong>場所（ばしょ）は何（なん）<strong>と言（い）いますか</strong>。
+<em>(What do you call a place where you read books?)</em></li>
+</ul>
+<p><em>Note: You can use <strong>ところ</strong> (place) or <strong>場所（ばしょ）</strong> (place/location).</em></p>
+<hr>
+<h3 id="answer-options-1">Answer Options</h3>
+<p>The answer depends on whether you mean a public library, a bookstore, or a reading room/study area:</p>
+<ul>
+<li><strong>図書館（としょかん）</strong> (<em>toshokan</em>): Library.</li>
+<li><strong>本屋（ほんや）</strong> (<em>hon'ya</em>) / <strong>書店（しょてん）</strong> (<em>shoten</em>): Bookstore.</li>
+<li><strong>読書室（どくしょしつ）</strong> (<em>dokusho-shitsu</em>): Reading room.</li>
+</ul>
+<p><strong>Complete Answer Sentence:</strong></p>
+<blockquote>
+<p><strong>図書館（としょかん）と言（い）います。</strong>
+<em>(It is called a library.)</em></p>
+</blockquote>
+<ol>
+<li>A natural beginner-level version would be:</li>
+</ol>
+<p><strong>デパートで洋服などを着てみるところは日本語で何と言いますか？</strong>
+<em>Depāto de yōfuku nado o kite miru tokoro wa Nihongo de nan to iimasu ka?</em></p>
+<p>However, if you mean <strong>“What do you call the place in a department store where you try on clothes?”</strong>, the most natural wording is:</p>
+<p><strong>デパートで洋服などを試着するところは日本語で何と言いますか？</strong>
+<em>Depāto de yōfuku nado o shichaku suru tokoro wa Nihongo de nan to iimasu ka?</em></p>
+<p>→ <strong>What do you call the place in a department store where you try on clothes?</strong></p>
+<p>The word you are probably looking for is <strong>試着室（しちゃくしつ）</strong> — <strong>fitting room / changing room</strong>.</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>“Where do Finnish people go naked?”**</p>
+<p>A natural beginner-level version is:</p>
+<p><strong>フィンランド人が裸で入るところはどこですか？</strong>
+<em>Finrando-jin ga hadaka de hairu tokoro wa doko desu ka?</em></p>
+<p>→ <strong>Where do Finnish people go in naked?</strong></p>
+<p><strong>Answer:</strong>
+<strong>サウナです。</strong>
+<em>Sauna desu.</em>
+→ <strong>It’s a sauna.</strong></p>
+<p>Here, <strong>裸（はだか）</strong> = naked, and <strong>裸で入る</strong> = enter/go in naked.</p>
+<ol start="3">
+<li>A natural corrected version is:</li>
+</ol>
+<p><strong>家で料理をするところはどこですか？</strong>
+<em>Ie de ryōri o suru tokoro wa doko desu ka?</em></p>
+<p>→ <strong>Where in the house do you cook?</strong></p>
+<p>If the intended answer is <strong>“kitchen”</strong>, then:</p>
+<p><strong>キッチンです。</strong>
+<em>Kicchin desu.</em>
+→ <strong>The kitchen.</strong></p>
+<p>A slightly more natural version is:</p>
+<p><strong>家で料理をする場所はどこですか？</strong>
+<em>Ie de ryōri o suru basho wa doko desu ka?</em></p>
+<p>Here <strong>場所（ばしょ）</strong> = place/location, while <strong>ところ</strong> is more beginner-friendly.</p>
+<p>Yes. If you want an answer other than <strong>キッチン</strong>, depending on the intended vocabulary, you could use:</p>
+<ul>
+<li><strong>台所（だいどころ）</strong> — kitchen; a traditional/common Japanese word</li>
+<li><strong>リビング</strong> — living room</li>
+<li><strong>ダイニング</strong> — dining room</li>
+<li><strong>食堂（しょくどう）</strong> — dining room / dining hall</li>
+</ul>
+<p>If the question is intended to have <strong>台所</strong> as the answer, I would phrase it:</p>
+<p><strong>家で料理をするところはどこですか？</strong>
+<em>Ie de ryōri o suru tokoro wa doko desu ka?</em>
+→ <strong>Where do you cook at home?</strong></p>
+<p><strong>台所です。</strong>
+<em>Daidokoro desu.</em>
+→ <strong>The kitchen.</strong></p>
+<p>For a beginner Japanese exercise, <strong>台所</strong> is a good alternative to <strong>キッチン</strong>.
+I think you mean <strong>“In which month do you open Christmas presents?”</strong></p>
+<p><strong>クリスマスプレゼントを開けるのは何月ですか？</strong>
+<em>Kurismasu purezento o akeru no wa nan-gatsu desu ka?</em></p>
+<p>→ <strong>What month do you open Christmas presents?</strong></p>
+<p><strong>December（12月・じゅうにがつ）</strong> would be the expected answer.</p>
+<ol>
+<li>Yes — if the answer should be <strong>水曜日（すいようび）</strong>, I would correct the question to:</li>
+</ol>
+<p><strong>火曜日のあとに来る曜日は日本語で何と言いますか？</strong>
+→ <strong>What is the day of the week that comes after Tuesday called in Japanese?</strong></p>
+<p><strong>水曜日（すいようび）です。</strong>
+→ <strong>Wednesday.</strong></p>
+<ol start="2">
+<li>A natural corrected version is:</li>
+</ol>
+<p><strong>フィンランド人がたいてい夏休みを取るのは何月ですか？</strong>
+<em>Finrando-jin ga taitei natsu-yasumi o toru no wa nan-gatsu desu ka?</em></p>
+<p>→ <strong>What month do Finnish people usually take their summer vacation?</strong></p>
+<p><strong>七月（しちがつ）です。</strong>
+→ <strong>July.</strong></p>
+<p>Small corrections:</p>
+<ul>
+<li>ふぃんらんどじん → <strong>フィンランド人</strong></li>
+<li>なつじゃすみ → <strong>夏休み（なつやすみ）</strong></li>
+<li>とる → <strong>取る</strong></li>
+<li>なんがつ → <strong>何月（なんがつ）</strong></li>
+</ul>
+<ol start="3">
+<li>A natural corrected version is:</li>
+</ol>
+<p><strong>フィンランドで独立を祝う日は何月何日ですか？</strong>
+<em>Finrando de dokuritsu o iwau hi wa nan-gatsu nan-nichi desu ka?</em></p>
+<p>→ <strong>What month and day is Finnish Independence Day?</strong></p>
+<p><strong>12月6日（じゅうにがつ むいか）です。</strong>
+→ <strong>December 6.</strong></p>
+<p>Corrections:</p>
+<ul>
+<li>とくりつ → <strong>独立（どくりつ）</strong> = independence</li>
+<li>祝う日は → <strong>祝う日は</strong> = the day when (we) celebrate</li>
+<li>なんがつなにつぃ → <strong>何月何日（なんがつなんにち）</strong> = what month and what day</li>
+<li>12月6日 → <strong>12月6日（じゅうにがつ むいか）</strong></li>
+</ul>
+<ol start="4">
+<li>A natural corrected version is:</li>
+</ol>
+<p><strong>雪がよく降る季節は日本語で何と言いますか？</strong>
+<em>Yuki ga yoku furu kisetsu wa Nihongo de nan to iimasu ka?</em></p>
+<p>→ <strong>What do you call the season when it often snows in Japanese?</strong></p>
+<p><strong>冬（ふゆ）です。</strong>
+→ <strong>Winter.</strong></p>
+<p>Corrections:</p>
+<ul>
+<li>ゆき → <strong>雪（ゆき）</strong></li>
+<li>ふる → <strong>降る（ふる）</strong></li>
+<li>きせつ → <strong>季節（きせつ）</strong></li>
+<li>にほんご → <strong>日本語（にほんご）</strong></li>
+<li>なんといいですか → <strong>何と言いますか（なんといいますか）</strong></li>
+</ul>
+
+</body>
+</html>
